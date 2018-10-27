@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WindowsFormsApplication1</RootNamespace>
     <AssemblyName>WindowsFormsApplication1</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +34,33 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Simio.resources">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\Simio.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="SimioAPI">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="SimioAPI.Extensions">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioAPI.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SimioAPI.Graphics">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioAPI.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="SimioDLL">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="SimioEnums">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioEnums.dll</HintPath>
+    </Reference>
+    <Reference Include="SimioReplicationRunnerContracts">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioReplicationRunnerContracts.dll</HintPath>
+    </Reference>
+    <Reference Include="SimioTypes">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioTypes.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -71,6 +99,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="vistaPrevia.resx">
       <DependentUpon>vistaPrevia.cs</DependentUpon>

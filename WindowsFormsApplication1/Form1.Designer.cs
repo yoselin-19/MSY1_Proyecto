@@ -72,6 +72,7 @@
             this.cargar1Button.TabIndex = 3;
             this.cargar1Button.Text = "Cargar";
             this.cargar1Button.UseVisualStyleBackColor = true;
+            this.cargar1Button.Click += new System.EventHandler(this.cargar1Button_Click);
             // 
             // cargar2Button
             // 
@@ -81,6 +82,7 @@
             this.cargar2Button.TabIndex = 4;
             this.cargar2Button.Text = "Cargar";
             this.cargar2Button.UseVisualStyleBackColor = true;
+            this.cargar2Button.Click += new System.EventHandler(this.cargar2Button_Click);
             // 
             // calcularButton
             // 
@@ -90,6 +92,7 @@
             this.calcularButton.TabIndex = 5;
             this.calcularButton.Text = "Calcular Rutas";
             this.calcularButton.UseVisualStyleBackColor = true;
+            this.calcularButton.Click += new System.EventHandler(this.calcularButton_Click);
             // 
             // Inicio
             // 
