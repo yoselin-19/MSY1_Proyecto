@@ -46,9 +46,9 @@ namespace WindowsFormsApplication1
                     throw new ApplicationException($"Proyecto no encontrado:{path}");
 
                 ISimioProject _simioProject = SimioProjectFactory.LoadProject(path, out warnings);
-                IModel model =  _simioProject.Models[0];               
+                IModel model =  _simioProject.Models[1];               
                 model.Facility.IntelligentObjects.CreateObject("Server", new FacilityLocation(0, 0, 0));
-                model.Facility.IntelligentObjects.CreateObject("Combiner", new FacilityLocation(90, 60, 90));
+                model.Facility.IntelligentObjects.CreateObject("Combiner", new FacilityLocation(10, 20, 10));
                 SimioProjectFactory.SaveProject(_simioProject, path, out warnings);
                 
                
