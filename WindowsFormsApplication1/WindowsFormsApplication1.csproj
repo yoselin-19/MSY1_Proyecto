@@ -49,31 +49,31 @@
     </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="Simio.resources">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\Simio.resources.dll</HintPath>
+      <HintPath>..\Simio.resources.dll</HintPath>
     </Reference>
     <Reference Include="SimioAPI">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioAPI.dll</HintPath>
+      <HintPath>..\SimioAPI.dll</HintPath>
     </Reference>
     <Reference Include="SimioAPI.Extensions, Version=10.171.16722.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\SimioAPI.Extensions.dll</HintPath>
+      <HintPath>..\SimioAPI.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="SimioAPI.Graphics">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioAPI.Graphics.dll</HintPath>
+      <HintPath>..\SimioAPI.Graphics.dll</HintPath>
     </Reference>
     <Reference Include="SimioDLL">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioDLL.dll</HintPath>
+      <HintPath>..\SimioDLL.dll</HintPath>
     </Reference>
     <Reference Include="SimioEnums">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioEnums.dll</HintPath>
+      <HintPath>..\SimioEnums.dll</HintPath>
     </Reference>
     <Reference Include="SimioReplicationRunnerContracts, Version=10.171.16722.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\SimioReplicationRunnerContracts.dll</HintPath>
+      <HintPath>..\SimioReplicationRunnerContracts.dll</HintPath>
     </Reference>
     <Reference Include="SimioTypes, Version=10.171.16722.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\SimioTypes.dll</HintPath>
+      <HintPath>..\SimioTypes.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
