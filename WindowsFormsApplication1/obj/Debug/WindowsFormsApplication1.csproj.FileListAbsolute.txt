@@ -19,3 +19,20 @@ C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY
 C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\SimioTypes.dll
 C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\ChoETL.dll
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\ChoETL.JSON.dll
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Inicio.resources
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.vistaPrevia.resources
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.cache
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.CoreCompileInputs.cache
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.CopyComplete
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojAssemblyReference.cache

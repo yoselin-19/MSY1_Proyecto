@@ -92,7 +92,7 @@
             this.calcularButton.TabIndex = 5;
             this.calcularButton.Text = "Calcular Rutas";
             this.calcularButton.UseVisualStyleBackColor = true;
-            this.calcularButton.Click += new System.EventHandler(this.calcularButton_Click);
+            this.calcularButton.Click += new System.EventHandler(this.CalcularButton_Click);
             // 
             // Inicio
             // 
@@ -107,6 +107,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Inicio";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Inicio_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

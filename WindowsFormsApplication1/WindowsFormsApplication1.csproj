@@ -34,17 +34,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\ICSharpCode.SharpZipLib.dll</HintPath>
+    <Reference Include="ChoETL, Version=1.0.8.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ChoETL.1.0.8.6\lib\ChoETL.dll</HintPath>
     </Reference>
+    <Reference Include="ChoETL.JSON, Version=1.0.5.9, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ChoETL.JSON.1.0.5.9\lib\ChoETL.JSON.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.1-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="Simio.resources">
       <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\Simio.resources.dll</HintPath>
     </Reference>
     <Reference Include="SimioAPI">
       <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioAPI.dll</HintPath>
     </Reference>
-    <Reference Include="SimioAPI.Extensions">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioAPI.Extensions.dll</HintPath>
+    <Reference Include="SimioAPI.Extensions, Version=10.171.16722.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\SimioAPI.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="SimioAPI.Graphics">
       <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioAPI.Graphics.dll</HintPath>
@@ -55,14 +67,19 @@
     <Reference Include="SimioEnums">
       <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioEnums.dll</HintPath>
     </Reference>
-    <Reference Include="SimioReplicationRunnerContracts">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioReplicationRunnerContracts.dll</HintPath>
+    <Reference Include="SimioReplicationRunnerContracts, Version=10.171.16722.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\SimioReplicationRunnerContracts.dll</HintPath>
     </Reference>
-    <Reference Include="SimioTypes">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Simio_dll\SimioTypes.dll</HintPath>
+    <Reference Include="SimioTypes, Version=10.171.16722.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\SimioTypes.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,6 +91,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="aeropuerto.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +122,7 @@
     <EmbeddedResource Include="vistaPrevia.resx">
       <DependentUpon>vistaPrevia.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -26,7 +26,26 @@ namespace WindowsFormsApplication1
 
         private void cargar1Button_Click(object sender, EventArgs e)
         {
-
+            string csv = File.ReadAllText(@"Aeropuertos.csv");
+            StringBuilder sb = new StringBuilder();
+            try
+            {
+              
+                using (var p = ChoETL.ChoCSVReader.LoadText(csv)
+                    .WithFirstLineHeader()
+                    )
+                {
+                    using (var w = new ChoETL.ChoJSONWriter(sb))
+                        w.Write(p);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            vistaPrevia vp = new vistaPrevia(sb);
+            vp.Show();
+            vp.Visible = true;
         }
 
         private void cargar2Button_Click(object sender, EventArgs e)
@@ -34,19 +53,18 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void calcularButton_Click(object sender, EventArgs e)
+        private void CalcularButton_Click(object sender, EventArgs e)
         {
             SimioProjectFactory.SetExtensionsPath(System.AppDomain.CurrentDomain.BaseDirectory);
            
             try
             {
                 string path = "Modelo1_G1.spfx";
-                string[] warnings;
                 if (File.Exists(path) == false)
                     throw new ApplicationException($"Proyecto no encontrado:{path}");
 
-                ISimioProject _simioProject = SimioProjectFactory.LoadProject(path, out warnings);
-                IModel model =  _simioProject.Models[1];               
+                ISimioProject _simioProject = SimioAPI.SimioProjectFactory.LoadProject(path, out string[] warnings);
+                IModel model =  _simioProject.Models[0];               
                 model.Facility.IntelligentObjects.CreateObject("Server", new FacilityLocation(0, 0, 0));
                 model.Facility.IntelligentObjects.CreateObject("Combiner", new FacilityLocation(10, 20, 10));
                 SimioProjectFactory.SaveProject(_simioProject, path, out warnings);
@@ -57,6 +75,11 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
