@@ -8,15 +8,6 @@ C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY
 C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
 C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
-C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\ICSharpCode.SharpZipLib.dll
-C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\Simio.resources.dll
-C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\SimioAPI.dll
-C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\SimioAPI.Extensions.dll
-C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\SimioAPI.Graphics.dll
-C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\SimioDLL.dll
-C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\SimioEnums.dll
-C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\SimioReplicationRunnerContracts.dll
-C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\SimioTypes.dll
 C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
 C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
@@ -68,3 +59,7 @@ C:\Users\Nery\Documents\USAC\2018\Segundo_Semestre\Modelación y simulación 1\L
 C:\Users\Nery\Documents\USAC\2018\Segundo_Semestre\Modelación y simulación 1\Laboratorio\Ejercicios_Simio\Proyecto_Final\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.CopyComplete
 C:\Users\Nery\Documents\USAC\2018\Segundo_Semestre\Modelación y simulación 1\Laboratorio\Ejercicios_Simio\Proyecto_Final\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Nery\Documents\USAC\2018\Segundo_Semestre\Modelación y simulación 1\Laboratorio\Ejercicios_Simio\Proyecto_Final\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\ChoETL.dll
+C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\ChoETL.JSON.dll
+C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml
