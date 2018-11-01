@@ -15,10 +15,11 @@ namespace WindowsFormsApplication1
 {
     public partial class vistaPrevia : Form
     {
-        public StringBuilder sb;
-        public vistaPrevia(StringBuilder sb )
+        DataTable dt;
+
+        public vistaPrevia(DataTable dt)
         {
-            this.sb = sb;
+            this.dt = dt;
             InitializeComponent();
         }
 
@@ -26,9 +27,7 @@ namespace WindowsFormsApplication1
         {
             try
             {                
-                var result = JsonConvert.DeserializeObject<List<aeropuerto>>(sb.ToString());
-                dataGridView1.DataSource = result;
-                Console.WriteLine(sb.ToString());
+                dataGridView1.DataSource = dt;
             }
             catch (Exception ex)
             {

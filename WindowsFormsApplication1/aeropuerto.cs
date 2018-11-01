@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-    class aeropuerto
+    public class aeropuerto
     {
         public int id { get; set; }
         public string nombre { get; set; }

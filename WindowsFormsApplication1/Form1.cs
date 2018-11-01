@@ -15,43 +15,56 @@ using SimioTypes;
 using SimioAPI;
 using System.IO;
 using Newtonsoft.Json;
+using System.Text.RegularExpressions;
 
 namespace WindowsFormsApplication1
 {
     public partial class Inicio : Form
     {
+
+        DataTable dt;
+
         public Inicio()
         {
             InitializeComponent();
         }
-        StringBuilder sb = new StringBuilder();
+        
+
         private void cargar1Button_Click(object sender, EventArgs e)
         {
-            string csv = File.ReadAllText(@"Aeropuertos.csv");
-           
-            try
+            StreamReader sr = new StreamReader("Aeropuertos.csv");
+            string[] headers = sr.ReadLine().Split(',');
+            dt = new DataTable();
+            foreach (string header in headers)
             {
-              
-                using (var p = ChoETL.ChoCSVReader.LoadText(csv)
-                    .WithFirstLineHeader()
-                    )
+                dt.Columns.Add(header);
+            }
+
+            while (!sr.EndOfStream)
+            {
+                string[] rows = sr.ReadLine().Split(',');
+                DataRow dr = dt.NewRow();
+                for (int i = 0; i < headers.Length; i++)
                 {
-                    using (var w = new ChoETL.ChoJSONWriter(sb))
-                        w.Write(p);
+                    dr[i] = rows[i];
                 }
+                dt.Rows.Add(dr);
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            vistaPrevia vp = new vistaPrevia(sb);
+
+
+            vistaPrevia vp = new vistaPrevia(dt);
             vp.Show();
             vp.Visible = true;
+
+            //foreach (DataRow fila in dt.Rows)
+            //{
+            //    Console.WriteLine(fila[0] + " " + fila[1]);
+            //}
         }
 
         private void cargar2Button_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void CalcularButton_Click(object sender, EventArgs e)
@@ -66,11 +79,17 @@ namespace WindowsFormsApplication1
 
                 ISimioProject _simioProject = SimioAPI.SimioProjectFactory.LoadProject(path, out warnings);
                 IModel model =  _simioProject.Models[1];
-                var jsonObj = JsonConvert.DeserializeObject<List<aeropuerto>>(sb.ToString());
-                foreach (var obj in jsonObj)
+
+                //var jsonObj = JsonConvert.DeserializeObject<List<aeropuerto>>(sb.ToString());
+                //foreach (var obj in jsonObj)
+                //{
+                //    model.Facility.IntelligentObjects.CreateObject("Combiner", new FacilityLocation(obj.posicion_x, obj.posicion_z, obj.posicion_y));
+
+                //}
+
+                foreach (DataRow fila in dt.Rows)
                 {
-                    model.Facility.IntelligentObjects.CreateObject("Combiner", new FacilityLocation(obj.posicion_x, obj.posicion_z, obj.posicion_y));
-                    
+                    model.Facility.IntelligentObjects.CreateObject("Combiner", new FacilityLocation(Convert.ToDouble(fila[2]), Convert.ToDouble(fila[3]), Convert.ToDouble(fila[4])));
                 }
                 SimioProjectFactory.SaveProject(_simioProject, path, out warnings);
 
@@ -81,9 +100,9 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void Inicio_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
