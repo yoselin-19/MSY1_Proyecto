@@ -90,8 +90,45 @@ namespace WindowsFormsApplication1
                 foreach (DataRow fila in dt.Rows)
                 {
                     model.Facility.IntelligentObjects.CreateObject("Combiner", new FacilityLocation(Convert.ToDouble(fila[2]), Convert.ToDouble(fila[3]), Convert.ToDouble(fila[4])));
+                    //model.Facility.IntelligentObjects.CreateObject("Combiner", new FacilityLocation(Convert.ToDouble(fila[2]), Convert.ToDouble(fila[4]), Convert.ToDouble(fila[3])));
+
+                    var objeto = model.Facility.IntelligentObjects["Combiner1"];
+                    objeto.ObjectName = "aeropuerto_" + Convert.ToString(fila[0]);
+
+                    //FailureType = 61
+                    objeto.Properties[61].Value = Convert.ToString(fila[5]);
+                    //CountBetweenFailures = 63
+                    objeto.Properties[63].Value = Convert.ToString(fila[6]);
+                    //TimeToRepair = 65
+                    objeto.Properties[65].Value = Convert.ToString(fila[7]);
+                    //InitialCapacity = 16
+                    objeto.Properties[16].Value = Convert.ToString(fila[8]);
+                    //ProcessingTime = 39
+                    objeto.Properties[39].Value = Convert.ToString(fila[10]);
+                    //BatchQuantity = 27
+                    objeto.Properties[27].Value = "100";
                 }
+
+
+                //var objeto2 = model.Facility.IntelligentObjects["aeropuerto_1"];
+                //objeto2.ObjectName = "nuevo";
+
+
+
+
+
+
+
+
+
+                /*Esto es para los Path*/
+                //INodeObject a = ((IFixedObject)model.Facility.IntelligentObjects["Combiner1"]).Nodes[1];
+                //INodeObject b = ((IFixedObject)model.Facility.IntelligentObjects["Combiner2"]).Nodes[0];
+                //model.Facility.IntelligentObjects.CreateLink("Path", a, b, null);
+
+
                 SimioProjectFactory.SaveProject(_simioProject, path, out warnings);
+                MessageBox.Show("Carga realizada");
 
             }
             catch (Exception ex)
