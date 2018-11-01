@@ -110,10 +110,12 @@ namespace WindowsFormsApplication1
 
                 //}
 
+                ////model.Facility.IntelligentObjects.CreateObject("Source", new FacilityLocation(0,0,0));
+
                 foreach (DataRow fila in dt.Rows)
                 {
-                    model.Facility.IntelligentObjects.CreateObject("Combiner", new FacilityLocation(Convert.ToDouble(fila[2]), Convert.ToDouble(fila[3]), Convert.ToDouble(fila[4])));
-                    //model.Facility.IntelligentObjects.CreateObject("Combiner", new FacilityLocation(Convert.ToDouble(fila[2]), Convert.ToDouble(fila[4]), Convert.ToDouble(fila[3])));
+                    //model.Facility.IntelligentObjects.CreateObject("Combiner", new FacilityLocation(Convert.ToDouble(fila[2]), Convert.ToDouble(fila[3]), Convert.ToDouble(fila[4])));
+                    model.Facility.IntelligentObjects.CreateObject("Combiner", new FacilityLocation(Convert.ToDouble(fila[2]), Convert.ToDouble(fila[4]), Convert.ToDouble(fila[3])));
 
                     var objeto = model.Facility.IntelligentObjects["Combiner1"];
                     objeto.ObjectName = "aeropuerto_" + Convert.ToString(fila[0]);
@@ -132,23 +134,22 @@ namespace WindowsFormsApplication1
                     objeto.Properties[27].Value = "100";
                 }
 
-
                 //var objeto2 = model.Facility.IntelligentObjects["aeropuerto_1"];
                 //objeto2.ObjectName = "nuevo";
 
 
+                /**************Esto es para los Path**************/
+                //Destino posicion 0 
+                //Origen posicion 1
 
-
-
-
-
-
-
-                /*Esto es para los Path*/
-                //INodeObject a = ((IFixedObject)model.Facility.IntelligentObjects["Combiner1"]).Nodes[1];
-                //INodeObject b = ((IFixedObject)model.Facility.IntelligentObjects["Combiner2"]).Nodes[0];
-                //model.Facility.IntelligentObjects.CreateLink("Path", a, b, null);
-
+                foreach (DataRow fila in dt2.Rows)
+                {
+                    String aux1 = "aeropuerto_" + fila[0];
+                    String aux2 = "aeropuerto_" + fila[1];
+                    INodeObject a = ((IFixedObject)model.Facility.IntelligentObjects[aux2]).Nodes[2];
+                    INodeObject b = ((IFixedObject)model.Facility.IntelligentObjects[aux1]).Nodes[0];
+                    model.Facility.IntelligentObjects.CreateLink("Path", a, b, null);
+                }
 
                 SimioProjectFactory.SaveProject(_simioProject, path, out warnings);
                 MessageBox.Show("Carga realizada");
