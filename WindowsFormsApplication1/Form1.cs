@@ -14,6 +14,7 @@ using SimioReplicationRunnerContracts;
 using SimioTypes;
 using SimioAPI;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace WindowsFormsApplication1
 {
@@ -23,11 +24,11 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-
+        StringBuilder sb = new StringBuilder();
         private void cargar1Button_Click(object sender, EventArgs e)
         {
             string csv = File.ReadAllText(@"Aeropuertos.csv");
-            StringBuilder sb = new StringBuilder();
+           
             try
             {
               
@@ -56,20 +57,23 @@ namespace WindowsFormsApplication1
         private void CalcularButton_Click(object sender, EventArgs e)
         {
             SimioProjectFactory.SetExtensionsPath(System.AppDomain.CurrentDomain.BaseDirectory);
-           
+            string[] warnings;
             try
             {
                 string path = "Modelo1_G1.spfx";
                 if (File.Exists(path) == false)
                     throw new ApplicationException($"Proyecto no encontrado:{path}");
 
-                ISimioProject _simioProject = SimioAPI.SimioProjectFactory.LoadProject(path, out string[] warnings);
-                IModel model =  _simioProject.Models[0];               
-                model.Facility.IntelligentObjects.CreateObject("Server", new FacilityLocation(0, 0, 0));
-                model.Facility.IntelligentObjects.CreateObject("Combiner", new FacilityLocation(10, 20, 10));
+                ISimioProject _simioProject = SimioAPI.SimioProjectFactory.LoadProject(path, out warnings);
+                IModel model =  _simioProject.Models[1];
+                var jsonObj = JsonConvert.DeserializeObject<List<aeropuerto>>(sb.ToString());
+                foreach (var obj in jsonObj)
+                {
+                    model.Facility.IntelligentObjects.CreateObject("Combiner", new FacilityLocation(obj.posicion_x, obj.posicion_z, obj.posicion_y));
+                    
+                }
                 SimioProjectFactory.SaveProject(_simioProject, path, out warnings);
-                
-               
+
             }
             catch (Exception ex)
             {

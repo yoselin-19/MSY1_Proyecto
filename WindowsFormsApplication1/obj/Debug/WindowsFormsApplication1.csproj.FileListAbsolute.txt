@@ -31,8 +31,6 @@ C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\
 C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.vistaPrevia.resources
 C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.cache
-C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.CoreCompileInputs.cache
-C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.CopyComplete
 C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
-C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojAssemblyReference.cache
+C:\Users\Ruben\Desktop\Proyecto MYS1\MSY1_Proyecto\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
