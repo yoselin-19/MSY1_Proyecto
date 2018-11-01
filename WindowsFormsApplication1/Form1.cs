@@ -23,6 +23,7 @@ namespace WindowsFormsApplication1
     {
 
         DataTable dt;
+        DataTable dt2;
 
         public Inicio()
         {
@@ -64,7 +65,29 @@ namespace WindowsFormsApplication1
 
         private void cargar2Button_Click(object sender, EventArgs e)
         {
-            
+            StreamReader sr = new StreamReader("Rutas.csv");
+            string[] headers = sr.ReadLine().Split(',');
+            dt2 = new DataTable();
+            foreach (string header in headers)
+            {
+                dt2.Columns.Add(header);
+            }
+
+            while (!sr.EndOfStream)
+            {
+                string[] rows = sr.ReadLine().Split(',');
+                DataRow dr = dt2.NewRow();
+                for (int i = 0; i < headers.Length; i++)
+                {
+                    dr[i] = rows[i];
+                }
+                dt2.Rows.Add(dr);
+            }
+
+
+            vistaPrevia vp = new vistaPrevia(dt2);
+            vp.Show();
+            vp.Visible = true;
         }
 
         private void CalcularButton_Click(object sender, EventArgs e)
@@ -89,8 +112,15 @@ namespace WindowsFormsApplication1
 
                 foreach (DataRow fila in dt.Rows)
                 {
-                    model.Facility.IntelligentObjects.CreateObject("Combiner", new FacilityLocation(Convert.ToDouble(fila[2]), Convert.ToDouble(fila[3]), Convert.ToDouble(fila[4])));
+                    model.Facility.IntelligentObjects.CreateObject("Combiner", new FacilityLocation(Convert.ToDouble(fila[2]), Convert.ToDouble(fila[4]), Convert.ToDouble(fila[3])));
                 }
+
+                model.Facility.IntelligentObjects.CreateObject("Server", new FacilityLocation(0, 5, 0));
+                model.Facility.IntelligentObjects.CreateObject("Sink", new FacilityLocation(10, 5, 0));
+                INodeObject puntosalida = ((IFixedObject)model.Facility.IntelligentObjects["Server1"]).Nodes[1];
+                INodeObject puntodestino = ((IFixedObject)model.Facility.IntelligentObjects["Sink1"]).Nodes[0];
+                model.Facility.IntelligentObjects.CreateLink("Path", puntosalida, puntodestino, null);
+
                 SimioProjectFactory.SaveProject(_simioProject, path, out warnings);
 
             }
