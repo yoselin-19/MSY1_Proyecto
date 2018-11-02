@@ -63,3 +63,4 @@ C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY
 C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\ChoETL.JSON.dll
 C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
 C:\Users\annel\Yoselin\USAC\Modela1\Laboratorio\Practicas_Proyectos\Proyecto\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ruben\Desktop\MYS1\MSY1_Proyecto\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config

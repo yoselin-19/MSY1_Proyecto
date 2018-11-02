@@ -174,6 +174,35 @@ namespace WindowsFormsApplication1
                     model.Facility.IntelligentObjects.CreateLink("Path", a, b, null);
                 }
 
+                //*************** Esto es para los experimentos **********/
+                IExperiment experimento = model.Experiments.Create("Experimento");
+
+                //configurando el experimento
+                IRunSetup setup = experimento.RunSetup;
+                setup.StartingTime = new DateTime(2018, 10, 1);
+                setup.WarmupPeriod = TimeSpan.FromHours(0);
+                setup.EndingTime = experimento.RunSetup.StartingTime + TimeSpan.FromDays(1);
+                experimento.ConfidenceLevel = ExperimentConfidenceLevelType.Point95;
+                experimento.LowerPercentile = 25;
+                experimento.UpperPercentile = 75;
+                //configuracion variable de control
+
+                //configurando los responses
+                //a estos hay que asignarles un valor en el escenario
+                IExperimentResponse response1 = experimento.Responses.Create("CantidadAviones");
+                response1.Expression = "avion.cantidad"; //valor de ejemplo
+                IExperimentResponse response2 = experimento.Responses.Create("CantidadPersonasTranportadas");
+                response2.Expression = "personas.cantidad"; //valor de ejemplo
+
+                //creando un escenario
+                IScenario escenario1 = experimento.Scenarios.Create("escenario1");
+                IScenario escenario2 = experimento.Scenarios.Create("escenario2");
+                IScenario escenario3 = experimento.Scenarios.Create("escenario3");
+
+                //escenario creados
+                //TODO cambiar la variable de control por escenario
+                //como se hace? el metodo de controls de cada escenario solo tiene un get
+                //que solo devueleve el valor del control pero no para asignarselo                 
 
                 SimioProjectFactory.SaveProject(_simioProject, path, out warnings);
                 MessageBox.Show("Carga realizada");
