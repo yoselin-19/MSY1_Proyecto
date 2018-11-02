@@ -110,7 +110,17 @@ namespace WindowsFormsApplication1
 
                 //}
 
-                ////model.Facility.IntelligentObjects.CreateObject("Source", new FacilityLocation(0,0,0));
+                model.Facility.IntelligentObjects.CreateObject("Source", new FacilityLocation(0,0,0));
+                var objetoA = model.Facility.IntelligentObjects["Source1"];
+                objetoA.ObjectName = "Personas";
+                objetoA.Properties["EntityType"].Value = "ModelEntity1";
+                objetoA.Properties["InterarrivalTime"].Value = "Random.Poisson(0.2)";
+
+                model.Facility.IntelligentObjects.CreateObject("Source", new FacilityLocation(-20, 0, 0));
+                var objetoB = model.Facility.IntelligentObjects["Source1"];
+                objetoB.ObjectName = "Aviones";
+                objetoB.Properties["EntityType"].Value = "ModelEntity2";
+                objetoB.Properties["InterarrivalTime"].Value = "Random.Poisson(12)";
 
                 foreach (DataRow fila in dt.Rows)
                 {
@@ -125,13 +135,26 @@ namespace WindowsFormsApplication1
                     //CountBetweenFailures = 63
                     objeto.Properties[63].Value = Convert.ToString(fila[6]);
                     //TimeToRepair = 65
-                    objeto.Properties[65].Value = Convert.ToString(fila[7]);
+                    objeto.Properties[65].Value = Convert.ToString((Convert.ToDouble(fila[7]) / 60));
                     //InitialCapacity = 16
                     objeto.Properties[16].Value = Convert.ToString(fila[8]);
                     //ProcessingTime = 39
                     objeto.Properties[39].Value = Convert.ToString(fila[10]);
                     //BatchQuantity = 27
                     objeto.Properties[27].Value = "100";
+                    //MemberTransferInTime
+                    objeto.Properties["MemberTransferInTime"].Value = Convert.ToString(fila[9]); ;
+
+
+                    String combi = "aeropuerto_" + Convert.ToString(fila[0]);
+                    INodeObject a = ((IFixedObject)model.Facility.IntelligentObjects["Personas"]).Nodes[0];
+                    INodeObject b = ((IFixedObject)model.Facility.IntelligentObjects[combi]).Nodes[1];
+                    model.Facility.IntelligentObjects.CreateLink("Path", a, b, null);
+
+                    String combi2 = "aeropuerto_" + Convert.ToString(fila[0]);
+                    INodeObject a2 = ((IFixedObject)model.Facility.IntelligentObjects["Aviones"]).Nodes[0];
+                    INodeObject b2 = ((IFixedObject)model.Facility.IntelligentObjects[combi]).Nodes[0];
+                    model.Facility.IntelligentObjects.CreateLink("Path", a2, b2, null);
                 }
 
                 //var objeto2 = model.Facility.IntelligentObjects["aeropuerto_1"];
@@ -150,6 +173,7 @@ namespace WindowsFormsApplication1
                     INodeObject b = ((IFixedObject)model.Facility.IntelligentObjects[aux1]).Nodes[0];
                     model.Facility.IntelligentObjects.CreateLink("Path", a, b, null);
                 }
+
 
                 SimioProjectFactory.SaveProject(_simioProject, path, out warnings);
                 MessageBox.Show("Carga realizada");
