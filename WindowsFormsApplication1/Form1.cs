@@ -16,6 +16,7 @@ using SimioAPI;
 using System.IO;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace WindowsFormsApplication1
 {
@@ -33,7 +34,21 @@ namespace WindowsFormsApplication1
 
         private void cargar1Button_Click(object sender, EventArgs e)
         {
-            StreamReader sr = new StreamReader("Aeropuertos.csv");
+            OpenFileDialog op = new OpenFileDialog();
+            op.Title = "Open File";
+            op.InitialDirectory = @"C:\";
+            op.CheckFileExists = true;
+            op.CheckPathExists = true;
+            op.DefaultExt = "csv";
+            op.Filter = "File (*.csv)|*.csv";
+            op.FilterIndex = 1;
+            op.RestoreDirectory = true;
+            string name = "";
+            if (op.ShowDialog() == DialogResult.OK)
+            {
+               name = op.FileName;
+            }
+            StreamReader sr = new StreamReader(name);
             string[] headers = sr.ReadLine().Split(',');
             dt = new DataTable();
             foreach (string header in headers)
@@ -56,16 +71,25 @@ namespace WindowsFormsApplication1
             vistaPrevia vp = new vistaPrevia(dt);
             vp.Show();
             vp.Visible = true;
-
-            //foreach (DataRow fila in dt.Rows)
-            //{
-            //    Console.WriteLine(fila[0] + " " + fila[1]);
-            //}
         }
 
         private void cargar2Button_Click(object sender, EventArgs e)
         {
-            StreamReader sr = new StreamReader("Rutas.csv");
+            OpenFileDialog op = new OpenFileDialog();
+            op.Title = "Open File";
+            op.InitialDirectory = @"C:\";
+            op.CheckFileExists = true;
+            op.CheckPathExists = true;
+            op.DefaultExt = "csv";
+            op.Filter = "File (*.csv)|*.csv";
+            op.FilterIndex = 1;
+            op.RestoreDirectory = true;
+            string name = "";
+            if (op.ShowDialog() == DialogResult.OK)
+            {
+                name = op.FileName;
+            }
+            StreamReader sr = new StreamReader(name);
             string[] headers = sr.ReadLine().Split(',');
             dt2 = new DataTable();
             foreach (string header in headers)
