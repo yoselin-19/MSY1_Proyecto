@@ -138,13 +138,20 @@ namespace WindowsFormsApplication1
                 var objetoA = model.Facility.IntelligentObjects["Source1"];
                 objetoA.ObjectName = "Personas";
                 objetoA.Properties["EntityType"].Value = "ModelEntity1";
-                objetoA.Properties["InterarrivalTime"].Value = "Random.Poisson(0.2)";
+                objetoA.Properties["InterarrivalTime"].Value = "Random.Poisson(5)";
+
+                INodeObject nodo = ((IFixedObject)model.Facility.IntelligentObjects["Personas"]).Nodes[0];
+                var nombreNodo = nodo.Properties["OutboundLinkRule"];
+                nombreNodo.Value = "By Link Weight";
+                //[64] = {EnteredAddOnProcess: }
+                var exitedProcess = nodo.Properties["EnteredAddOnProcess"];
+                exitedProcess.Value = "Process1";
 
                 model.Facility.IntelligentObjects.CreateObject("Source", new FacilityLocation(-20, 0, 0));
                 var objetoB = model.Facility.IntelligentObjects["Source1"];
                 objetoB.ObjectName = "Aviones";
                 objetoB.Properties["EntityType"].Value = "ModelEntity2";
-                objetoB.Properties["InterarrivalTime"].Value = "Random.Poisson(12)";
+                objetoB.Properties["InterarrivalTime"].Value = "Random.Poisson(0.1)";
 
                 foreach (DataRow fila in dt.Rows)
                 {
@@ -158,6 +165,11 @@ namespace WindowsFormsApplication1
 
                     var entradaAeropuerto = model.Facility.IntelligentObjects["Sink1"];
                     entradaAeropuerto.ObjectName = "AuxAeropuerto_" + Convert.ToString(fila[0]);
+
+                    String vari = "aeropuerto_" + Convert.ToString(fila[0]);
+                    INodeObject nodo2 = ((IFixedObject)model.Facility.IntelligentObjects[vari]).Nodes[1];
+                    var exitedProcess2 = nodo2.Properties["EnteredAddOnProcess"];
+                    exitedProcess2.Value = "Write_Bitacora";
 
                     //FailureType = 61
                     objeto.Properties[61].Value = Convert.ToString(fila[5]);
@@ -178,7 +190,10 @@ namespace WindowsFormsApplication1
                     String combi = "aeropuerto_" + Convert.ToString(fila[0]);
                     INodeObject a = ((IFixedObject)model.Facility.IntelligentObjects["Personas"]).Nodes[0];
                     INodeObject b = ((IFixedObject)model.Facility.IntelligentObjects[combi]).Nodes[1];
-                    model.Facility.IntelligentObjects.CreateLink("Path", a, b, null);
+                    var arista = model.Facility.IntelligentObjects.CreateLink("Path", a, b, null);
+                    var tipoSeleccion = arista.Properties["SelectionWeight"];
+                    //Math.If( ModelEntity.destino == 1, 1, 0 )
+                    tipoSeleccion.Value = "Math.If( ModelEntity.a_origen == " + Convert.ToString(fila[0]) + ", 1, 0 )";
 
                     String combi2 = "aeropuerto_" + Convert.ToString(fila[0]);
                     INodeObject a2 = ((IFixedObject)model.Facility.IntelligentObjects["Aviones"]).Nodes[0];
@@ -207,29 +222,29 @@ namespace WindowsFormsApplication1
                 }
 
                 //*************** Esto es para los experimentos **********/
-                IExperiment experimento = model.Experiments.Create("Experimento");
+                //IExperiment experimento = model.Experiments.Create("Experimento");
 
-                //configurando el experimento
-                IRunSetup setup = experimento.RunSetup;
-                setup.StartingTime = new DateTime(2018, 10, 1);
-                setup.WarmupPeriod = TimeSpan.FromHours(0);
-                setup.EndingTime = experimento.RunSetup.StartingTime + TimeSpan.FromDays(1);
-                experimento.ConfidenceLevel = ExperimentConfidenceLevelType.Point95;
-                experimento.LowerPercentile = 25;
-                experimento.UpperPercentile = 75;
-                //configuracion variable de control
+                ////configurando el experimento
+                //IRunSetup setup = experimento.RunSetup;
+                //setup.StartingTime = new DateTime(2018, 10, 1);
+                //setup.WarmupPeriod = TimeSpan.FromHours(0);
+                //setup.EndingTime = experimento.RunSetup.StartingTime + TimeSpan.FromDays(1);
+                //experimento.ConfidenceLevel = ExperimentConfidenceLevelType.Point95;
+                //experimento.LowerPercentile = 25;
+                //experimento.UpperPercentile = 75;
+                ////configuracion variable de control
 
-                //configurando los responses
-                //a estos hay que asignarles un valor en el escenario
-                IExperimentResponse response1 = experimento.Responses.Create("CantidadAviones");
-                response1.Expression = "avion.cantidad"; //valor de ejemplo
-                IExperimentResponse response2 = experimento.Responses.Create("CantidadPersonasTranportadas");
-                response2.Expression = "personas.cantidad"; //valor de ejemplo
+                ////configurando los responses
+                ////a estos hay que asignarles un valor en el escenario
+                //IExperimentResponse response1 = experimento.Responses.Create("CantidadAviones");
+                //response1.Expression = "avion.cantidad"; //valor de ejemplo
+                //IExperimentResponse response2 = experimento.Responses.Create("CantidadPersonasTranportadas");
+                //response2.Expression = "personas.cantidad"; //valor de ejemplo
 
-                //creando un escenario
-                IScenario escenario1 = experimento.Scenarios.Create("escenario1");
-                IScenario escenario2 = experimento.Scenarios.Create("escenario2");
-                IScenario escenario3 = experimento.Scenarios.Create("escenario3");
+                ////creando un escenario
+                //IScenario escenario1 = experimento.Scenarios.Create("escenario1");
+                //IScenario escenario2 = experimento.Scenarios.Create("escenario2");
+                //IScenario escenario3 = experimento.Scenarios.Create("escenario3");
 
                 //escenario creados
                 //TODO cambiar la variable de control por escenario
