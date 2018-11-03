@@ -130,6 +130,11 @@ namespace WindowsFormsApplication1
                     var objeto = model.Facility.IntelligentObjects["Combiner1"];
                     objeto.ObjectName = "aeropuerto_" + Convert.ToString(fila[0]);
 
+                    model.Facility.IntelligentObjects.CreateObject("Sink", new FacilityLocation((Convert.ToDouble(fila[2]) - 5), Convert.ToDouble(fila[4]), Convert.ToDouble(fila[3])));
+
+                    var entradaAeropuerto = model.Facility.IntelligentObjects["Sink1"];
+                    entradaAeropuerto.ObjectName = "AuxAeropuerto_" + Convert.ToString(fila[0]);
+
                     //FailureType = 61
                     objeto.Properties[61].Value = Convert.ToString(fila[5]);
                     //CountBetweenFailures = 63
@@ -169,8 +174,11 @@ namespace WindowsFormsApplication1
                 {
                     String aux1 = "aeropuerto_" + fila[0];
                     String aux2 = "aeropuerto_" + fila[1];
+                    String aux3 = "AuxAeropuerto_" + fila[0];
+
+                    //Aeropuerto Origen -> Salida
                     INodeObject a = ((IFixedObject)model.Facility.IntelligentObjects[aux2]).Nodes[2];
-                    INodeObject b = ((IFixedObject)model.Facility.IntelligentObjects[aux1]).Nodes[0];
+                    INodeObject b = ((IFixedObject)model.Facility.IntelligentObjects[aux3]).Nodes[0];
                     model.Facility.IntelligentObjects.CreateLink("Path", a, b, null);
                 }
 
